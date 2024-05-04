@@ -6,10 +6,7 @@ import ru.yandex.practicum.catsgram.exception.NotFoundException;
 import ru.yandex.practicum.catsgram.model.Post;
 
 import java.time.Instant;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -33,11 +30,11 @@ public class PostService {
                 .collect(Collectors.toCollection(ArrayList::new));
     }
 
-    public Post find(long id) {
+    public Optional<Post> find(long id) {
         if (!this.posts.containsKey(id)) {
-            throw new NotFoundException("Пост не найден");
+            return Optional.empty();
         }
-        return this.posts.get(id);
+        return Optional.of(this.posts.get(id));
     }
 
     public Post create(Post post) {
