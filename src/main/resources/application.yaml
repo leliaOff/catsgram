@@ -1,0 +1,11 @@
+spring:
+  output:
+    ansi:
+      enabled: "ALWAYS"
+
+logging.level:
+  ru.yandex.practicum.catsgram: TRACE
+  org.zalando.logbook: TRACE
+
+spring-catsgram:
+  directory: "D:\\java\\images"

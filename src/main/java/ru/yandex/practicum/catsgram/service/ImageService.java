@@ -29,7 +29,7 @@ public class ImageService {
 
     private final Map<Long, Image> images = new HashMap<>();
 
-    @Value("${catsgram.image-directory}")
+    @Value("${spring-catsgram.directory}")
     private String imageDirectory;
 
     public List<Image> getPostImages(long postId) {
